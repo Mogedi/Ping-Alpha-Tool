@@ -82,8 +82,10 @@ namespace PingAlpha_Tool
             }
             
 
-            if (!(string.IsNullOrEmpty(hostname) && string.IsNullOrEmpty(ipAddress)))
+            if (!(string.IsNullOrEmpty(hostname)) && !(string.IsNullOrEmpty(ipAddress)))
             {
+                System.Console.WriteLine(string.IsNullOrEmpty(hostname));
+                System.Console.WriteLine(string.IsNullOrEmpty(ipAddress));
                 System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
             }
             else if (string.IsNullOrEmpty(hostname) && string.IsNullOrEmpty(ipAddress))
@@ -99,7 +101,7 @@ namespace PingAlpha_Tool
             }
             else if (string.IsNullOrEmpty(ipAddress))
             {
-                hostname = "Empty Ip Address";
+                ipAddress = "Empty Ip Address";
                 System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
             }
 
