@@ -12,3 +12,5 @@ c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingA
 c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\PingAlpha Tool.csproj.GenerateResource.Cache
 c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\PingAlpha Tool.exe
 c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\PingAlpha Tool.pdb
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\SingleIP.g.cs
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\SingleIP.baml
