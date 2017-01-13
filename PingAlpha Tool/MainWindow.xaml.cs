@@ -24,5 +24,18 @@ namespace PingAlpha_Tool
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Button Works!");
+        }
+
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                button_Click(sender, e);
+            }
+        }
     }
 }
