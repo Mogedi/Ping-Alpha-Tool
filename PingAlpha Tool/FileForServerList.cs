@@ -90,9 +90,7 @@ namespace PingAlpha_Tool
             }
             else if (string.IsNullOrEmpty(hostname) && string.IsNullOrEmpty(ipAddress))
             {
-                hostname = "Empty Hostname";
-                ipAddress = "Empty Ip Address";
-                System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
+                MessageBox.Show("Please type a Hostname or an Ip Address");
             }
             else if (string.IsNullOrEmpty(hostname))
             {

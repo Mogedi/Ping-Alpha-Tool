@@ -35,8 +35,6 @@ namespace PingAlpha_Tool
                 this.ip_Address = ipAddress;
             });
 
-            MessageBox.Show(hostname + " " + ip_Address);
-
             FileForServerList.writeToFile(hostname, ipAddress);
         }
     }

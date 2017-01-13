@@ -31,8 +31,6 @@ namespace PingAlpha_Tool
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Button Works!");
-
             SingleIP addedIp = new SingleIP();
             addedIp.Parameters(hostNameBox.Text, ipAddressBox.Text);
 
