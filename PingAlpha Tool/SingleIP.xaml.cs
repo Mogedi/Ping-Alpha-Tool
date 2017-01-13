@@ -20,9 +20,22 @@ namespace PingAlpha_Tool
     /// </summary>
     public partial class SingleIP : UserControl
     {
+        string hostname;
+        string ip_Address;
         public SingleIP()
         {
             InitializeComponent();
+        }
+
+        public void Parameters(string hostname, string ipAddress)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                this.hostname = hostname;
+                this.ip_Address = ipAddress;
+            });
+
+            MessageBox.Show(hostname + " " + ip_Address);
         }
     }
 }

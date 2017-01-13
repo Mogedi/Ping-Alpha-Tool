@@ -33,6 +33,9 @@ namespace PingAlpha_Tool
         {
             MessageBox.Show("Button Works!");
 
+            SingleIP addedIp = new SingleIP();
+            addedIp.Parameters(hostNameBox.Text, ipAddressBox.Text);
+
         }
 
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
