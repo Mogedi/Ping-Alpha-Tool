@@ -28,6 +28,10 @@ namespace PingAlpha_Tool
         private void button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Button Works!");
+
+            FileForServerList file = new FileForServerList();
+
+            file.createDirectory();
         }
 
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
@@ -37,5 +41,7 @@ namespace PingAlpha_Tool
                 button_Click(sender, e);
             }
         }
+
+        
     }
 }
