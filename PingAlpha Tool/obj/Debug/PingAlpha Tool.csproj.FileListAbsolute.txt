@@ -1,1 +1,14 @@
 c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\bin\Debug\PingAlpha Tool.exe.config
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\bin\Debug\PingAlpha Tool.exe
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\bin\Debug\PingAlpha Tool.pdb
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\PingAlpha Tool.csprojResolveAssemblyReference.cache
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\MainWindow.g.cs
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\App.g.cs
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\PingAlpha Tool_MarkupCompile.cache
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\PingAlpha Tool_MarkupCompile.lref
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\MainWindow.baml
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\PingAlpha Tool.g.resources
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\PingAlpha_Tool.Properties.Resources.resources
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\PingAlpha Tool.csproj.GenerateResource.Cache
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\PingAlpha Tool.exe
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\PingAlpha Tool\PingAlpha Tool\obj\Debug\PingAlpha Tool.pdb

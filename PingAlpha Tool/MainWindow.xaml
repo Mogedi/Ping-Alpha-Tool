@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PingAlpha_Tool"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="550">
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Left" Height="375" Margin="50,40,0,0" VerticalAlignment="Top" Width="450"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="25" Margin="100,435,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="25" Margin="325,435,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="25,440,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="250,440,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="455,437,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label" Content="Hostname" HorizontalAlignment="Left" Margin="50,10,0,0" VerticalAlignment="Top" Width="125" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label1" Content="IP Address" HorizontalAlignment="Left" Margin="175,10,0,0" VerticalAlignment="Top" Width="125" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label2" Content="Status" HorizontalAlignment="Left" Margin="300,10,0,0" VerticalAlignment="Top" Width="125" HorizontalContentAlignment="Center"/>
+
     </Grid>
 </Window>
