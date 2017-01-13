@@ -13,20 +13,14 @@ namespace PingAlpha_Tool
         {
             string path = "C:\\Users\\" + System.Environment.UserName + "\\PingTool\\";
 
-            bool fileExist = System.IO.Directory.Exists(path);
+            bool directoryExist = System.IO.Directory.Exists(path);
 
-            MessageBox.Show("Directory Exist: " + fileExist.ToString());
-
-            if (!fileExist)
+            if (!directoryExist)
             {
                 System.IO.Directory.CreateDirectory(path);
                 createFile();
             }
                 
-            fileExist = System.IO.Directory.Exists(path);
-
-            MessageBox.Show("Directory Exist: " + fileExist.ToString());
-
             createFile();
         }
 
@@ -36,28 +30,45 @@ namespace PingAlpha_Tool
 
             bool fileExist = System.IO.File.Exists(path);
 
-            MessageBox.Show("File Exist: " + fileExist.ToString());
+            if (fileExist)
+            {
+                int counter = 0;
+                string line;
+                string[] alphas = {"Starfury,10.111.11.20","Normandy,10.111.11.21","Tigersclaw,10.111.11.22","WhiteStar,10.111.11.23","JupiterII,10.111.13.244",
+                    "Voyager,10.111.11.25","Serenity,10.111.11.26","Galactica,10.111.11.27","Enterprise,10.111.11.28","LobbyFx,10.111.13.155","Nostromo,10.111.13.177",
+                    "HeartOfGold,10.111.13.141","awing,10.111.11.29","bwing,10.111.11.30","ywing,10.111.11.31","xwing,10.111.11.32"};
+
+                System.IO.StreamReader file = new System.IO.StreamReader(path);
+                
+                while ((line = file.ReadLine()) != null)
+                {
+                    if (String.Compare(line, alphas[counter]) == 0)
+                    {
+                        System.Console.WriteLine(line);
+                        System.Console.WriteLine(counter);
+                        file.Close();
+                        System.IO.File.Delete(path);
+                        fileExist = System.IO.File.Exists(path);
+                        break;
+                    }
+                    counter++;
+                }
+                file.Close();
+            }
+                
 
             if (!fileExist)
-                System.IO.File.Create(path);
-
-            if (fileExist)
-                writeToFile(path);
-
-            fileExist = System.IO.File.Exists(path);
-
-            MessageBox.Show("File Exist: " + fileExist.ToString());
-        }
-
-        public void writeToFile(string path)
-        {
-            string[] alphas = {"Starfury,10.111.11.20","Normandy,10.111.11.21","Tigersclaw,10.111.11.22","WhiteStar,10.111.11.23","JupiterII,10.111.13.244",
-                "Voyager,10.111.11.25","Serenity,10.111.11.26","Galactica,10.111.11.27","Enterprise,10.111.11.28","LobbyFx,10.111.13.155","Nostromo,10.111.13.177",
-                "HeartOfGold,10.111.13.141","awing,10.111.11.29","bwing,10.111.11.30","ywing,10.111.11.31","xwing,10.111.11.32"};
-
-            foreach(string item in alphas)
             {
-                System.IO.File.AppendAllText(path, item + Environment.NewLine);
+                System.IO.File.Create(path).Close();
+
+                string[] alphas = {"Starfury,10.111.11.20","Normandy,10.111.11.21","Tigersclaw,10.111.11.22","WhiteStar,10.111.11.23","JupiterII,10.111.13.244",
+                    "Voyager,10.111.11.25","Serenity,10.111.11.26","Galactica,10.111.11.27","Enterprise,10.111.11.28","LobbyFx,10.111.13.155","Nostromo,10.111.13.177",
+                    "HeartOfGold,10.111.13.141","awing,10.111.11.29","bwing,10.111.11.30","ywing,10.111.11.31","xwing,10.111.11.32"};
+
+                foreach (string item in alphas)
+                {
+                    System.IO.File.AppendAllText(path, item + Environment.NewLine);
+                }
             }
         }
     }

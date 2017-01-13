@@ -23,15 +23,16 @@ namespace PingAlpha_Tool
         public MainWindow()
         {
             InitializeComponent();
+
+            FileForServerList file = new FileForServerList();
+
+            file.createDirectory();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Button Works!");
 
-            FileForServerList file = new FileForServerList();
-
-            file.createDirectory();
         }
 
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
