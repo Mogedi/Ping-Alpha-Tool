@@ -71,5 +71,39 @@ namespace PingAlpha_Tool
                 }
             }
         }
+
+        public static void writeToFile(string hostname, string ipAddress)
+        {
+            string path = "C:\\Users\\" + System.Environment.UserName + "\\PingTool\\userIPs.txt";
+
+            if (!(System.IO.File.Exists(path)))
+            {
+                System.IO.File.Create(path).Close();
+            }
+            
+
+            if (!(string.IsNullOrEmpty(hostname) && string.IsNullOrEmpty(ipAddress)))
+            {
+                System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
+            }
+            else if (string.IsNullOrEmpty(hostname) && string.IsNullOrEmpty(ipAddress))
+            {
+                hostname = "Empty Hostname";
+                ipAddress = "Empty Ip Address";
+                System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
+            }
+            else if (string.IsNullOrEmpty(hostname))
+            {
+                hostname = "Empty Hostname";
+                System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
+            }
+            else if (string.IsNullOrEmpty(ipAddress))
+            {
+                hostname = "Empty Ip Address";
+                System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
+            }
+
+
+        }
     }
 }
