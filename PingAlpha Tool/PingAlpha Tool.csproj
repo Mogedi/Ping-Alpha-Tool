@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="FileForServerList.cs" />
+    <Compile Include="Pinger.cs" />
     <Compile Include="SingleIP.xaml.cs">
       <DependentUpon>SingleIP.xaml</DependentUpon>
     </Compile>

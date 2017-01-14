@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="30" d:DesignWidth="450">
     <Grid Height="30" VerticalAlignment="Top">
-        <Label x:Name="hostName" Content="Label" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label x:Name="ipAddress" Content="Label" HorizontalAlignment="Left" Margin="125,0,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label x:Name="status" Content="Label" HorizontalAlignment="Left" Margin="250,0,0,0" VerticalAlignment="Top" Width="125"/>
-        <Button x:Name="removeButton" Content="Remove" HorizontalAlignment="Left" Margin="375,0,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.347,-0.494"/>
+        <Label x:Name="hostName" Content="Label" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="125" HorizontalContentAlignment="Center"/>
+        <Label x:Name="ipAddress" Content="Label" HorizontalAlignment="Left" Margin="125,0,0,0" VerticalAlignment="Top" Width="125" HorizontalContentAlignment="Center"/>
+        <Label x:Name="status" Content="Label" HorizontalAlignment="Left" Margin="250,0,0,0" VerticalAlignment="Top" Width="125" HorizontalContentAlignment="Center"/>
+        <Button x:Name="removeButton" Content="Remove" HorizontalAlignment="Left" Margin="375,0,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.347,-0.494" Click="removeButton_Click"/>
 
     </Grid>
 </UserControl>

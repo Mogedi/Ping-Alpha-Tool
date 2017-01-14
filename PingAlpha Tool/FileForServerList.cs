@@ -22,39 +22,41 @@ namespace PingAlpha_Tool
             }
                 
             createFile();
+
+            getValues();
         }
 
         public void createFile()
         {
-            string path = "C:\\Users\\" + System.Environment.UserName + "\\PingTool\\server.txt";
+            string path = "C:\\Users\\" + System.Environment.UserName + "\\PingTool\\servers.txt";
 
             bool fileExist = System.IO.File.Exists(path);
 
-            if (fileExist)
-            {
-                int counter = 0;
-                string line;
-                string[] alphas = {"Starfury,10.111.11.20","Normandy,10.111.11.21","Tigersclaw,10.111.11.22","WhiteStar,10.111.11.23","JupiterII,10.111.13.244",
-                    "Voyager,10.111.11.25","Serenity,10.111.11.26","Galactica,10.111.11.27","Enterprise,10.111.11.28","LobbyFx,10.111.13.155","Nostromo,10.111.13.177",
-                    "HeartOfGold,10.111.13.141","awing,10.111.11.29","bwing,10.111.11.30","ywing,10.111.11.31","xwing,10.111.11.32"};
+            //if (fileExist)
+            //{
+            //    int counter = 0;
+            //    string line;
+            //    string[] alphas = {"Starfury,10.111.11.20","Normandy,10.111.11.21","Tigersclaw,10.111.11.22","WhiteStar,10.111.11.23","JupiterII,10.111.13.244",
+            //        "Voyager,10.111.11.25","Serenity,10.111.11.26","Galactica,10.111.11.27","Enterprise,10.111.11.28","LobbyFx,10.111.13.155","Nostromo,10.111.13.177",
+            //        "HeartOfGold,10.111.13.141","awing,10.111.11.29","bwing,10.111.11.30","ywing,10.111.11.31","xwing,10.111.11.32"};
 
-                System.IO.StreamReader file = new System.IO.StreamReader(path);
+            //    System.IO.StreamReader file = new System.IO.StreamReader(path);
                 
-                while ((line = file.ReadLine()) != null)
-                {
-                    if (String.Compare(line, alphas[counter]) == 0)
-                    {
-                        System.Console.WriteLine(line);
-                        System.Console.WriteLine(counter);
-                        file.Close();
-                        System.IO.File.Delete(path);
-                        fileExist = System.IO.File.Exists(path);
-                        break;
-                    }
-                    counter++;
-                }
-                file.Close();
-            }
+            //    while ((line = file.ReadLine()) != null)
+            //    {
+            //        if (String.Compare(line, alphas[counter]) == 0)
+            //        {
+            //            System.Console.WriteLine(line);
+            //            System.Console.WriteLine(counter);
+            //            file.Close();
+            //            System.IO.File.Delete(path);
+            //            fileExist = System.IO.File.Exists(path);
+            //            break;
+            //        }
+            //        counter++;
+            //    }
+            //    file.Close();
+            //}
                 
 
             if (!fileExist)
@@ -74,7 +76,7 @@ namespace PingAlpha_Tool
 
         public static void writeToFile(string hostname, string ipAddress)
         {
-            string path = "C:\\Users\\" + System.Environment.UserName + "\\PingTool\\userIPs.txt";
+            string path = "C:\\Users\\" + System.Environment.UserName + "\\PingTool\\servers.txt";
 
             if (!(System.IO.File.Exists(path)))
             {
@@ -84,8 +86,6 @@ namespace PingAlpha_Tool
 
             if (!(string.IsNullOrEmpty(hostname)) && !(string.IsNullOrEmpty(ipAddress)))
             {
-                System.Console.WriteLine(string.IsNullOrEmpty(hostname));
-                System.Console.WriteLine(string.IsNullOrEmpty(ipAddress));
                 System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
             }
             else if (string.IsNullOrEmpty(hostname) && string.IsNullOrEmpty(ipAddress))
@@ -103,7 +103,28 @@ namespace PingAlpha_Tool
                 System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
             }
 
+            
+        }
 
+
+        public List<string> getValues()
+        {
+            List<string> servers = new List<string>();
+
+            string line;
+
+            System.IO.StreamReader file = new System.IO.StreamReader("C:\\Users\\" + System.Environment.UserName + "\\PingTool\\servers.txt");
+
+            while ((line = file.ReadLine()) != null)
+            {
+                servers.Add(line.Split(',')[0] + ", " + line.Split(',')[1]);
+            }
+
+            file.Close();
+
+            System.Console.ReadLine();
+
+            return servers;
         }
     }
 }
