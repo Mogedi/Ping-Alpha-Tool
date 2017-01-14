@@ -22,8 +22,6 @@ namespace PingAlpha_Tool
             }
                 
             createFile();
-
-            getValues();
         }
 
         public void createFile()
@@ -84,32 +82,10 @@ namespace PingAlpha_Tool
             }
 
             System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
-
-
-            //if (!(string.IsNullOrEmpty(hostname)) && !(string.IsNullOrEmpty(ipAddress)))
-            //{
-            //    System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
-            //}
-            //else if (string.IsNullOrEmpty(hostname) && string.IsNullOrEmpty(ipAddress))
-            //{
-            //    MessageBox.Show("Please type a Hostname or an Ip Address");
-            //}
-            //else if (string.IsNullOrEmpty(hostname))
-            //{
-            //    hostname = "Empty Hostname";
-            //    System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
-            //}
-            //else if (string.IsNullOrEmpty(ipAddress))
-            //{
-            //    ipAddress = "Empty Ip Address";
-            //    System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
-            //}
-
-            
         }
 
 
-        public List<string> getValues()
+        public List<string> readFile()
         {
             List<string> servers = new List<string>();
 
@@ -123,8 +99,6 @@ namespace PingAlpha_Tool
             }
 
             file.Close();
-
-            System.Console.ReadLine();
 
             return servers;
         }

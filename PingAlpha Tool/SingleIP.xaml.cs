@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -25,13 +26,14 @@ namespace PingAlpha_Tool
         string ip_Address;
         Panel ipAddressContainer;
         bool pingable;
+        Timer myTimer;
 
         public SingleIP()
         {
             InitializeComponent();
         }
 
-        public bool Parameters(string hostname, string ipAddress, Panel ipAddressContainer)
+        public bool Parameters(string hostname, string ipAddress, Panel ipAddressContainer, bool writeToFile)
         {
 
             if (string.IsNullOrEmpty(hostname) && string.IsNullOrEmpty(ipAddress))
@@ -56,13 +58,29 @@ namespace PingAlpha_Tool
 
             });
 
-            FileForServerList.writeToFile(hostname, ip_Address);
+            if(writeToFile)
+                FileForServerList.writeToFile(hostname, ip_Address);
 
             pingable = Pinger.UsingPinger(hostname, ip_Address);
+
+            // Create a timer
+            myTimer = new System.Timers.Timer();
+            // Tell the timer what to do when it elapses
+            myTimer.Elapsed += new ElapsedEventHandler(repeat);
+            // Set it to go off every five seconds
+            myTimer.Interval = 5000;
+            // And start it        
+            myTimer.Enabled = true;
 
             createRow();
 
             return true;
+        }
+
+        public void repeat(object source, ElapsedEventArgs e)
+        {
+            pingable = Pinger.UsingPinger(hostname, ip_Address);
+            createRow();
         }
 
         public void createRow()
@@ -74,9 +92,15 @@ namespace PingAlpha_Tool
 
             if(pingable)
             {
-                this.Dispatcher.Invoke(() => {
-                    this.status.Background = System.Windows.Media.Brushes.Green;
-                });
+                try
+                {
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        this.status.Background = System.Windows.Media.Brushes.White;
+                    });
+                }
+                catch (Exception) { }
+                
             }
 
             if (!pingable)
@@ -91,7 +115,9 @@ namespace PingAlpha_Tool
 
         private void removeButton_Click(object sender, RoutedEventArgs e)
         {
-
+            myTimer.Stop();
+            myTimer = null;
+            ipAddressContainer.Children.Remove(this);
         }
     }
 }

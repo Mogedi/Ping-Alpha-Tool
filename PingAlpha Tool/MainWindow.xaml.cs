@@ -27,12 +27,44 @@ namespace PingAlpha_Tool
             FileForServerList file = new FileForServerList();
 
             file.createDirectory();
+
+            List<string> serverList = file.readFile();
+
+            Console.WriteLine(serverList.Count);
+
+            Console.WriteLine(serverList[0]);
+
+            foreach(string item in serverList)
+            {
+                string hosts = item.Split(',')[0].Trim();
+                string ip = item.Split(',')[1].Trim();
+
+                Console.WriteLine(hosts);
+
+                Console.WriteLine(ip);
+
+                SingleIP addedIp = new SingleIP();
+                addedIp.Parameters(hosts, ip, singleIpContainer, false);
+                singleIpContainer.Children.Add(addedIp);
+
+                //if (ip.Equals("Empty Hostname", StringComparison.OrdinalIgnoreCase))
+                //{
+                //    SingleIP addedIp = new SingleIP();
+                //    bool createRow = addedIp.Parameters(hostNameBox.Text, ipAddressBox.Text, singleIpContainer);
+                //    if (createRow)
+                //        singleIpContainer.Children.Add(addedIp);
+                //}
+                //if (hosts.Equals("Empty Ip Address", StringComparison.OrdinalIgnoreCase))
+                //{
+
+                //}
+            }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             SingleIP addedIp = new SingleIP();
-            bool createRow = addedIp.Parameters(hostNameBox.Text, ipAddressBox.Text, singleIpContainer);
+            bool createRow = addedIp.Parameters(hostNameBox.Text, ipAddressBox.Text, singleIpContainer, true);
             if(createRow)
                 singleIpContainer.Children.Add(addedIp);
         }

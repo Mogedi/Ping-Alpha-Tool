@@ -5,19 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PingAlpha_Tool"
         mc:Ignorable="d"
-        Title="PingAlpha" Height="500" Width="550">
+        Title="PingAlpha" Height="750" Width="550">
     <Grid>
-        <StackPanel x:Name="singleIpContainer" HorizontalAlignment="Left" Height="385" Margin="50,40,0,0" VerticalAlignment="Top" Width="450">
-            
-        </StackPanel>
-        <TextBox x:Name="hostNameBox" HorizontalAlignment="Left" Height="25" Margin="100,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" KeyDown="OnKeyDownHandler"/>
-        <TextBox x:Name="ipAddressBox" HorizontalAlignment="Left" Height="25" Margin="325,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" KeyDown="OnKeyDownHandler"/>
-        <TextBlock x:Name="hostNameTextBlock" HorizontalAlignment="Left" Margin="25,439,0,0" TextWrapping="Wrap" Text="Hostname:" VerticalAlignment="Top"/>
-        <TextBlock x:Name="ipAddressTextBlock" HorizontalAlignment="Left" Margin="250,439,0,0" TextWrapping="Wrap" Text="Ip Address:" VerticalAlignment="Top"/>
-        <Button x:Name="addButton" Content="Add" HorizontalAlignment="Left" Margin="455,437,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <TextBlock x:Name="hostNameLabel" Text="Hostname" HorizontalAlignment="Left" Margin="50,25,0,0" VerticalAlignment="Top" Width="125" TextAlignment="Center"/>
-        <TextBlock x:Name="ipAddressLabel" Text="IP Address" HorizontalAlignment="Left" Margin="175,25,0,0" VerticalAlignment="Top" Width="125" TextAlignment="Center"/>
-        <TextBlock x:Name="statusLabel" Text="Status" HorizontalAlignment="Left" Margin="300,25,0,0" VerticalAlignment="Top" Width="125" TextAlignment="Center"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="625" Margin="25,40,0,0" VerticalAlignment="Top" Width="500">
+            <StackPanel x:Name="singleIpContainer" >
+
+            </StackPanel>
+        </ScrollViewer>
+        <TextBox x:Name="hostNameBox" HorizontalAlignment="Left" Height="25" Margin="100,685,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" KeyDown="OnKeyDownHandler"/>
+        <TextBox x:Name="ipAddressBox" HorizontalAlignment="Left" Height="25" Margin="325,685,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" KeyDown="OnKeyDownHandler"/>
+        <TextBlock x:Name="hostNameTextBlock" HorizontalAlignment="Left" Margin="25,689,0,0" TextWrapping="Wrap" Text="Hostname:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ipAddressTextBlock" HorizontalAlignment="Left" Margin="250,689,0,0" TextWrapping="Wrap" Text="Ip Address:" VerticalAlignment="Top"/>
+        <Button x:Name="addButton" Content="Add" HorizontalAlignment="Left" Margin="455,687,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <TextBlock x:Name="hostNameLabel" Text="Hostname" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top" Width="125" TextAlignment="Center" TextDecorations="Underline"/>
+        <TextBlock x:Name="ipAddressLabel" Text="IP Address" HorizontalAlignment="Left" Margin="150,25,0,0" VerticalAlignment="Top" Width="125" TextAlignment="Center" TextDecorations="Underline"/>
+        <TextBlock x:Name="statusLabel" Text="Status" HorizontalAlignment="Left" Margin="275,25,0,0" VerticalAlignment="Top" Width="125" TextAlignment="Center" TextDecorations="Underline"/>
 
     </Grid>
 </Window>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PingAlpha_Tool
 {
@@ -31,23 +32,7 @@ namespace PingAlpha_Tool
                     pingReplyArray[0] = pingIpAddressReply;
                 }
 
-                //if (!(string.IsNullOrEmpty(hostname)) && !(string.IsNullOrEmpty(ip_Address)))
-                //{
-                //    pingIpAddressReply = pinger.Send(ip_Address, 500);
-                //    pingReplyArray[0] = pingIpAddressReply;
-                //}
-
-                //if ((string.IsNullOrEmpty(hostname)))
-                //{
-                //    pingIpAddressReply = pinger.Send(ip_Address, 500);
-                //    pingReplyArray[0] = pingIpAddressReply;
-                //}
-                //if ((string.IsNullOrEmpty(ip_Address)))
-                //{
-                //    pingHostnameReply = pinger.Send(hostname, 500);
-                //    pingReplyArray[0] = pingHostnameReply;
-                //}
-
+                Console.WriteLine("Pinging: " + ip_Address);
                 return pingReplyArray;
             }
             catch (Exception)
