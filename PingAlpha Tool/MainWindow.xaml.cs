@@ -32,11 +32,9 @@ namespace PingAlpha_Tool
         private void button_Click(object sender, RoutedEventArgs e)
         {
             SingleIP addedIp = new SingleIP();
-            addedIp.Parameters(hostNameBox.Text, ipAddressBox.Text, singleIpContainer);
-            singleIpContainer.Children.Add(addedIp);
-            
-
-
+            bool createRow = addedIp.Parameters(hostNameBox.Text, ipAddressBox.Text, singleIpContainer);
+            if(createRow)
+                singleIpContainer.Children.Add(addedIp);
         }
 
         private void OnKeyDownHandler(object sender, KeyEventArgs e)

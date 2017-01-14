@@ -82,26 +82,28 @@ namespace PingAlpha_Tool
             {
                 System.IO.File.Create(path).Close();
             }
-            
 
-            if (!(string.IsNullOrEmpty(hostname)) && !(string.IsNullOrEmpty(ipAddress)))
-            {
-                System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
-            }
-            else if (string.IsNullOrEmpty(hostname) && string.IsNullOrEmpty(ipAddress))
-            {
-                MessageBox.Show("Please type a Hostname or an Ip Address");
-            }
-            else if (string.IsNullOrEmpty(hostname))
-            {
-                hostname = "Empty Hostname";
-                System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
-            }
-            else if (string.IsNullOrEmpty(ipAddress))
-            {
-                ipAddress = "Empty Ip Address";
-                System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
-            }
+            System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
+
+
+            //if (!(string.IsNullOrEmpty(hostname)) && !(string.IsNullOrEmpty(ipAddress)))
+            //{
+            //    System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
+            //}
+            //else if (string.IsNullOrEmpty(hostname) && string.IsNullOrEmpty(ipAddress))
+            //{
+            //    MessageBox.Show("Please type a Hostname or an Ip Address");
+            //}
+            //else if (string.IsNullOrEmpty(hostname))
+            //{
+            //    hostname = "Empty Hostname";
+            //    System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
+            //}
+            //else if (string.IsNullOrEmpty(ipAddress))
+            //{
+            //    ipAddress = "Empty Ip Address";
+            //    System.IO.File.AppendAllText(path, hostname + "," + ipAddress + Environment.NewLine);
+            //}
 
             
         }

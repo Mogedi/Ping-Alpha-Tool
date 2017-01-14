@@ -31,8 +31,23 @@ namespace PingAlpha_Tool
             InitializeComponent();
         }
 
-        public void Parameters(string hostname, string ipAddress, Panel ipAddressContainer)
+        public bool Parameters(string hostname, string ipAddress, Panel ipAddressContainer)
         {
+
+            if (string.IsNullOrEmpty(hostname) && string.IsNullOrEmpty(ipAddress))
+            {
+                MessageBox.Show("Please type a Hostname or an Ip Address");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(hostname))
+            {
+                hostname = "Empty Hostname";
+            }
+            else if (string.IsNullOrEmpty(ipAddress))
+            {
+                ipAddress = "Empty Ip Address";
+            }
+
             this.Dispatcher.Invoke(() =>
             {
                 this.hostname = hostname;
@@ -41,11 +56,13 @@ namespace PingAlpha_Tool
 
             });
 
-            FileForServerList.writeToFile(hostname, ipAddress);
+            FileForServerList.writeToFile(hostname, ip_Address);
 
-            Console.WriteLine(UsingPinger());
+            pingable = Pinger.UsingPinger(hostname, ip_Address);
 
             createRow();
+
+            return true;
         }
 
         public void createRow()
@@ -70,32 +87,7 @@ namespace PingAlpha_Tool
             }
         }
 
-        public string UsingPinger()
-        {
-            try
-            {
-                if (!(string.IsNullOrEmpty(hostname)) || !(string.IsNullOrEmpty(ip_Address)))
-                {
-                    Pinger ping = new Pinger();
-
-                    PingReply[] pingResults = ping.PingAlpha(hostname, ip_Address);
-
-                    if(pingResults[0].Status == 0)
-                    {
-                        pingable = true;
-                        return "Success";
-                    }
-                }
-                pingable = false;
-                return "Failure";
-
-            }
-            catch (Exception)
-            {
-                pingable = false;
-                return "Failure";
-            }
-        }
+        
 
         private void removeButton_Click(object sender, RoutedEventArgs e)
         {
